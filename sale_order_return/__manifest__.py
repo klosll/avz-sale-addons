@@ -9,6 +9,7 @@
     "depends": [
         "sale_order_confirm_usability",
         "sale_order_type_picking",
+        "sale_line_pending_info",
     ],
     "data": [
         "views/sale_order_view.xml",

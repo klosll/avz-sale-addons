@@ -156,3 +156,11 @@ class SaleOrderLine(models.Model):
         for line in self:
             if line.return_qty and line.return_qty > 0:
                 line.product_uom_qty = line.qty_delivered
+
+    @api.depends("return_qty")
+    def _compute_qty_amount_pending_delivery(self):
+        result = super(SaleOrderLine, self)._compute_qty_amount_pending_delivery()
+        for line in self.filtered(lambda l: l.return_qty and l.return_qty > 0):
+            line.qty_pending_delivery = 0.0
+            line.amount_pending_delivery = 0.0
+        return result
