@@ -19,7 +19,7 @@ class StockMoveLine(models.Model):
         store=True,
     )
     returnable = fields.Boolean(
-        string="Returnable", default=False, related="product_id.returnable", store=True
+        string="Returnable", related="product_id.returnable", store=True
     )
 
     @api.constrains("max_return", "quantity")
