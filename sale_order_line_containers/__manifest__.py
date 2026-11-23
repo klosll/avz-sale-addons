@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Sale Order Line Containers",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "author": "Avanzosc",
     "website": "https://github.com/avanzosc/sale-addons",
     "category": "Sale",
@@ -10,6 +10,8 @@
         "sale_stock",
         "stock_move_line_force_done",
         "sale_order_line_qty_by_packaging",
+        # HT02687: la vista se ancla en product_packaging_id, que inserta este
+        "stock_move_qty_by_packaging",
     ],
     "data": [
         "views/sale_order_view.xml",
